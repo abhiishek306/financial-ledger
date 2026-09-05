@@ -1,5 +1,7 @@
 # Distributed Double-Entry Financial Ledger Engine
 
+[![CI](https://github.com/abhiishek306/financial-ledger/actions/workflows/ci.yml/badge.svg)](https://github.com/abhiishek306/financial-ledger/actions/workflows/ci.yml)
+
 A crash-resilient, log-structured double-entry ledger engine written in
 modern C++20, built the way a financial infrastructure team (think
 Stripe/Google Payments-style internal ledger) would: durable
