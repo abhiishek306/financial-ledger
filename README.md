@@ -87,6 +87,19 @@ flowchart LR
 * Recovery (`recovery::recover`) never returns success unless `validate_trial_balance` holds:
   `sum(Asset) + sum(Expense) - sum(Liability) - sum(Equity) - sum(Revenue) == 0`.
 
+## Run it in one command (Docker, no toolchain needed)
+
+```bash
+docker run --rm ghcr.io/abhiishek306/financial-ledger:latest
+```
+
+This pulls a prebuilt image (Ubuntu 24.04 + GCC 13 build, tested with `ctest`
+during the image build itself) and runs the concurrent-submit + crash-recovery
+demo, printing the same output shown under [Verified build & test
+results](#verified-build--test-results) below. The image is built and pushed
+automatically by [`.github/workflows/docker-publish.yml`](.github/workflows/docker-publish.yml)
+on every push to `main`.
+
 ## Building (Linux / WSL2 with a real distro)
 
 This engine uses POSIX APIs directly (`open`/`write`/`fsync`/`pread`/`ftruncate`)
